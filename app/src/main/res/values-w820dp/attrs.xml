@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="MaterialCalendarView">
+
+        <attr name="mcv_dateTextAppearance" format="reference" />
+        <attr name="mcv_weekDayTextAppearance" format="reference" />
+        <attr name="mcv_headerTextAppearance" format="reference" />
+
+        <attr name="mcv_arrowColor" format="color" />
+        <attr name="mcv_leftArrowMask" format="reference" />
+        <attr name="mcv_rightArrowMask" format="reference" />
+        <attr name="mcv_selectionColor" format="color" />
+
+        <attr name="mcv_showOtherDates" format="boolean" />
+
+        <attr name="mcv_weekDayLabels" format="reference" />
+        <attr name="mcv_monthLabels" format="reference" />
+
+        <attr name="mcv_tileSize" format="dimension" />
+
+        <attr name="mcv_firstDayOfWeek" format="enum">
+            <enum name="日" value="1" />
+            <enum name="一" value="2" />
+            <enum name="二" value="3" />
+            <enum name="三" value="4" />
+            <enum name="四" value="5" />
+            <enum name="五" value="6" />
+            <enum name="六" value="7" />
+        </attr>
+
+    </declare-styleable>
+
+</resources>
