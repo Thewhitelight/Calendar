@@ -9,9 +9,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 
 import cn.libery.calendar.MaterialCalendar.CalendarDay;
+import cn.libery.calendar.MaterialCalendar.EventDecorator;
 import cn.libery.calendar.MaterialCalendar.MaterialCalendarView;
 import cn.libery.calendar.MaterialCalendar.OnDateLongChangedListener;
 import cn.libery.calendar.MaterialCalendar.OnDateSelectedListener;
@@ -76,13 +78,25 @@ public class MainActivity extends AppCompatActivity implements OnDateSelectedLis
                 }
             });
         }
+        addDecorator();
+    }
+
+    private void addDecorator() {
+        Calendar calendar = Calendar.getInstance();
+        ArrayList<CalendarDay> dates = new ArrayList<>();
+        for (int i = 0; i < 30; i++) {
+            CalendarDay day = CalendarDay.from(calendar);
+            dates.add(day);
+            calendar.add(Calendar.DATE, 5);
+        }
+        mCalendarView.addDecorator(new EventDecorator(Color.WHITE, dates));
     }
 
     @Override
     public void onDateLongChanged(@NonNull final MaterialCalendarView widget, @Nullable final CalendarDay date) {
         mCalendarView.clearSelection();
         mCalendarView.setSelectedDate(date);
-        Toast.makeText(this, date.getDate().toString(), Toast.LENGTH_LONG).show();
+        Toast.makeText(this, date.getCalendar().toString(), Toast.LENGTH_LONG).show();
     }
 
     @Override
